@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <script>
+    function activate(){
+      document.getElementById("right").style.display="block";
+    
+    }
+    function change()
+    {
+       var signup=document.getElementById("signup");
+       var login=document.getElementById("login");
+       signup.classList.add("active");
+       signup.classList.remove("inactive");
+       login.classList.remove("active");
+       login.classList.add("inactive");
+    }
+
+    function changeback()
+    {
+       var signup=document.getElementById("signup");
+       var login=document.getElementById("login");
+       signup.classList.add("inactive");
+       signup.classList.remove("active");
+       login.classList.remove("inactive");
+       login.classList.add("active");
+    }
+</script>
+<div class="split left">
+       <div class="center">
+           <h1>Q-Eventer</h1>
+       </div>
+       <div class="buttons">
+         <span onclick="changeback();activate();">Login</span/>
+         <span onclick="change();activate();">Sign up</span>
+       </div>
+   </div>
+   <div class="split right" id="right">
+      <div class="active" id="login">
+        <div class="form">
+            <h1>LOGIN</h1>
+            <p class="heading">Welcome back! Please login to your account</p>
+            <div class="inputbox">
+                <input type="text" placeholder="Username" class="input-field">
+                <input type="password" placeholder="Password" class="input-field">
+            </div>
+            <div class="checkbox">
+              <input type="checkbox"> Remember me
+            </div>
+            <a href="#" class="forget">Forget Password?</a>
+            <div class="buttons">
+                <span class="btn1">Login</span>
+                <span class="btn2" id="signupbtn" onclick="change()">Sign up</span>
+            </div>
+            <span id="demo"></span>
+         </div>
+      </div>
+      <div class="inactive" id="signup">
+        <div class="form fchange">
+          <h1>SIGNUP</h1>
+          <p class="heading">Please complete to create your account</p>
+          <div class="name">
+            <input type="text" name="" class="firstname" placeholder="First Name">
+            <input type="text" name="" class="lastname" placeholder="Last Name">
+          </div>
+          <input type="text" name="" class="username" placeholder="Username">
+          <input type="text" name="" class="email" placeholder="Email">
+          <input type="password" name="" class="password" placeholder="Password">
+          <input type="password" name="" class="cpassword" placeholder="Confirm Password">
+          <div class="checkbox">
+            <input type="checkbox" name="" class= "box">
+            I agree with terms and conditions
+          </div>   
+          <div class="buttons">
+            <span class="signupbtn">Sign Up</span>  
+          </div>
+          <div class="signinbtn">
+            <p>Already have an account?</p><span onclick="changeback()">Sign in</span>
+          </div>
+        </div>
+      </div>
+   </div>
+</body>
+</html>
